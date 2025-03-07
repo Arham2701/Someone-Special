@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Talk I want to Say</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+    <script>
+        let noClickCount = 0;
+        
+        function handleYesClick() {
+            alert("My Heart Situation: I care for you deeply!");
+        }
+        
+        function handleNoClick() {
+            noClickCount++;
+            let yesButton = document.querySelector(".yes");
+            let noButton = document.querySelector(".no");
+            
+            yesButton.style.fontSize = `${16 + noClickCount * 5}px`;
+            noButton.style.fontSize = `${16 - noClickCount}px`;
+            
+            if (parseInt(noButton.style.fontSize) <= 5) {
+                noButton.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Aslam Alikum</h1>
+    </header>
+    <main>
+        <p>If you Want to Know my Heart Situation.</p>
+        <div class="buttons">
+            <button class="yes" onclick="handleYesClick()">Yes</button>
+            <button class="no" onclick="handleNoClick()">No</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Only For You</p>
+    </footer>
+</body>
+</html>
